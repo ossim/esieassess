@@ -25,6 +25,7 @@ import java.io.IOException;
  * Created by davidxie on 7/15/16.
  */
 public class VideoActivity extends AppCompatActivity {
+    private String TAG = VideoActivity.class.getName();
 
     private VideoView myVideoView;
     private ProgressDialog videoProgressDialog;
@@ -40,6 +41,7 @@ public class VideoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_video);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        Log.d(TAG, "onCreate 1");
 
         myVideoView = (VideoView) findViewById(R.id.video_view);
 
@@ -51,16 +53,18 @@ public class VideoActivity extends AppCompatActivity {
         videoProgressDialog.show();
 
         try {
-            myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.road_s0));
+            myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.rabbit));
         } catch (Exception e) {
-            Log.e("Error", e.getMessage());
+            Log.e(TAG, e.getMessage());
             e.printStackTrace();
         }
 
         myVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             public void onPrepared(MediaPlayer mediaPlayer) {
-                new MediaPrepareTask().execute(null, null, null);
+                // RXIE: Camera code caused crashes, take it out for now
+                // new MediaPrepareTask().execute(null, null, null);
                 videoProgressDialog.dismiss();
+                Log.d(TAG, "start playing video now");
                 myVideoView.start();
 
             }
@@ -68,6 +72,7 @@ public class VideoActivity extends AppCompatActivity {
 
         myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mediaPlayer) {
+                Log.d(TAG, "video played");
                 Intent intent = new Intent(VideoActivity.this, ResultsActivity.class);
                 startActivity(intent);
             }
@@ -132,11 +137,11 @@ public class VideoActivity extends AppCompatActivity {
         try {
             mMediaRecorder.prepare();
         } catch (IllegalStateException e) {
-            Log.d("videoactivity", "IllegalStateException preparing MediaRecorder: " + e.getMessage());
+            Log.d(TAG, "IllegalStateException preparing MediaRecorder: " + e.getMessage());
             releaseMediaRecorder();
             return false;
         } catch (IOException e) {
-            Log.d("videoactivity", "IOException preparing MediaRecorder: " + e.getMessage());
+            Log.d(TAG, "IOException preparing MediaRecorder: " + e.getMessage());
             releaseMediaRecorder();
             return false;
         }
@@ -165,12 +170,10 @@ public class VideoActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean result) {
             if (!result) {
+                Log.d(TAG, "Done with VideoActivity!");
                 VideoActivity.this.finish();
             }
         }
     }
-
-
-
 
 }
