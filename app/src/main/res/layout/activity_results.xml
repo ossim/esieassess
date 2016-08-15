@@ -11,4 +11,108 @@
         android:id="@+id/imageView2"
         android:scaleType = "centerCrop"
         android:contentDescription="excellent!" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:weightSum="2">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"/>
+
+        <LinearLayout
+            android:id="@+id/resultSidebar"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="#CC333333"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Alertness Assessment Report"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="User ID: 13579"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="Time: 7/2/2016"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/resultRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#88dd99"
+                android:alpha="0.2"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:text="Excellent"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/resultRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#8899dd"
+                android:alpha="0.2"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:text="Good"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/resultRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ddee88"
+                android:alpha="0.2"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:text="Compromised"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/resultRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ddaa33"
+                android:alpha="0.2"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:text="At Risk"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/resultRow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#dd9988"
+                android:alpha="0.2"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:text="Failed"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
 </FrameLayout>

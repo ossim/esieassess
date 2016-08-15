@@ -18,6 +18,7 @@
         android:text="Alertness Assessment User Guide"
         android:textColor="#ffffff"
         android:textSize="32sp"
+        android:textStyle="bold"
         android:id="@+id/textView2" />
 
     <TextView
@@ -28,13 +29,15 @@
         android:layout_marginBottom="15dp"
         android:textColor="#ffffff"
         android:layout_marginRight="70dp"
+        android:textStyle="bold"
         android:layout_gravity="right|bottom" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Hold your smartphone horizontally at a comfortable distance. Move your eyes as naturally as possible for the best results. Never drink and drive."
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textColor="#ffffff"
         android:layout_gravity="left|center_vertical" />
 
