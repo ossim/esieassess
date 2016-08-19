@@ -3,6 +3,8 @@
     package="com.example.davidxie.esieassess">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -26,15 +28,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".VideoActivity"
+            android:name="com.example.davidxie.esieassess.VideoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ResultsActivity"
+
+        <activity
+            android:name=".ResultsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <service android:name="com.example.davidxie.esieassess.RecorderService" />
+
+        <activity android:name=".SidebarActivity" />
     </application>
 
 </manifest>

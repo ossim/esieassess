@@ -3,20 +3,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_test"
             android:icon="@drawable/assessment"
             android:title="Test" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_data"
             android:icon="@drawable/mydata"
             android:title="My Data" />
 
         <item
-            android:id="@+id/nav_share"
+            android:id="@+id/nav_all"
             android:icon="@drawable/benchmark"
             android:title="All" />
         <item
-            android:id="@+id/nav_send"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/setting"
             android:title="Settings" />
     </group>
