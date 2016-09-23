@@ -99,7 +99,6 @@ public class RecorderService extends Service {
 
     public boolean startRecording(){
         try {
-            Toast.makeText(getBaseContext(), "Recording Started", Toast.LENGTH_SHORT).show();
 
             mServiceCamera = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
             Camera.Parameters params = mServiceCamera.getParameters();
@@ -160,7 +159,6 @@ public class RecorderService extends Service {
     }
 
     public void stopRecording() {
-        Toast.makeText(getBaseContext(), "Recording Stopped", Toast.LENGTH_SHORT).show();
         try {
             mServiceCamera.reconnect();
 
@@ -181,7 +179,7 @@ public class RecorderService extends Service {
     public static String getCurrentTimeStamp(){
         try {
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MMddyyyyHHmmss");
             String currentTimeStamp = dateFormat.format(new Date()); // Find todays date
 
             return currentTimeStamp;
